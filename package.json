@@ -4,7 +4,7 @@
   "description": "some usefull design patterns, algorithms and data structures for javascript",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
