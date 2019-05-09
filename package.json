@@ -1,0 +1,22 @@
+{
+  "name": "js-challange",
+  "version": "1.0.0",
+  "description": "some usefull design patterns, algorithms and data structures for javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laplandin/JS-challange.git"
+  },
+  "author": "laplandin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laplandin/JS-challange/issues"
+  },
+  "homepage": "https://github.com/laplandin/JS-challange#readme",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
