@@ -7,6 +7,7 @@ You can find appropriate section folders and files by names, listed below.
 This is repository contains some useful information of JavaScript parties such as:
 
 ### Design Patterns
+- Singleton
 
 ### Algorithms
 
