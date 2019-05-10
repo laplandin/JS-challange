@@ -5,21 +5,35 @@ class List {
 		this.storage = Array.isArray(list) ? list : [];
 	}
 	/* Edit operations */
+	// TODO: append array
 	append(item) {
+		if (item === undefined) {
+			return;
+		}
 		this.storage[this.length++] = item;
 	}
 	
 	prepend(item) {
+		if (item === undefined) {
+			return;
+		}
 		this.storage = [item].concat(this.storage);
+		this.length++;
 	}
 	
 	insert(item, index) {
+		if (typeof index !== 'number' || item === undefined || index === undefined || !this._checkIndex(index)) {
+			return;
+		}
 		// TODO: maybe do it immutable?
 		this.storage.splice(index, 0, item);
 		this.length++;
 	}
 	
 	remove(index) {
+		if (typeof index !== 'number' || index === undefined || !this._checkIndex(index)) {
+			return;
+		}
 		this.storage.splice(index, 1);
 		this.length--;
 	}
@@ -39,14 +53,14 @@ class List {
 	}
 	
 	end() {
-		if (this.position > -1) {
+		if (this.length > 0) {
 			this.position = this.length - 1;
 		}
 		return this.position;
 	}
 	
 	prev() {
-		if (this.position - 1 > 0) {
+		if (this.position - 1 >= 0) {
 			this.position--;
 		}
 		return this.position;
@@ -68,12 +82,11 @@ class List {
 	}
 	
 	/* Info operations */
-	currPos() {
-		return this.position;
-	}
-	
 	getCurrElement() {
-		return this.storage[this.position];
+		if (this.position > -1 ) {
+			return this.storage[this.position];
+		}
+		return null;
 	}
 	
 	getElement(index) {
@@ -120,14 +133,13 @@ class List {
 			case 'number':
 				return this._indexOfAll(this.storage, item);
 			case 'object':
-				let found = -1;
-				this.storage.reduce((acc, value, index) => {
+				const found = this.storage.reduce((acc, value, index) => {
 					if (this._deepCompare(value, item)) {
 						acc.push(index);
 					}
 					return acc;
 				}, []);
-				return found;
+				return found.length ? found : null;
 			default:
 				break;
 		}
@@ -158,7 +170,7 @@ class List {
 		let startIndex = 0;
 		let index = arr.indexOf(item, startIndex);
 		while (index > -1) {
-			found.push(arr[index]);
+			found.push(index);
 			startIndex = index + 1;
 			index = arr.indexOf(item, startIndex);
 		}
