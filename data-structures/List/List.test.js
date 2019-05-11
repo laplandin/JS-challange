@@ -280,4 +280,10 @@ describe('\n/* -------------- Info operations -------------- */\n', () => {
 		index = list.find(string);
 		expect(index).toEqual([6]);
 	});
+	
+	test('toString function', () => {
+		const initialState = [0, 1, true, false, { a: 1 }, null, 'string', '', undefined];
+		const list = new List(initialState);
+		expect(list.toString()).toBe(initialState.toString());
+	});
 });

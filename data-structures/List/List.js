@@ -1,6 +1,6 @@
 class List {
 	constructor(list) {
-		this.position = -1;
+		this.position = -1; // means that no selected items
 		this.length = Array.isArray(list) ? list.length : 0;
 		this.storage = Array.isArray(list) ? list : [];
 	}
@@ -143,6 +143,14 @@ class List {
 			default:
 				break;
 		}
+	}
+	
+	toString() {
+		let result = '';
+		for (let i = 0; i < this.storage.length; i++) {
+			result += this.storage[i] != null ? `${this.storage[i].toString()},` : ',';
+		}
+		return result.slice(0, result.length - 1);
 	}
 	
 	/* private helpers */
