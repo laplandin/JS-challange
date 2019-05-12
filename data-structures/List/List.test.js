@@ -1,8 +1,5 @@
 const List = require('./List');
-
-const generateItems = (n) => {
-	return Array.from(Array(n), (_, index) => ({ n: index }));
-};
+const generateItems = require('../libs/generateArray');
 
 test('creates new list with initial state of storage', () => {
 	const initialState = generateItems(10);

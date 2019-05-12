@@ -1,8 +1,8 @@
 class List {
 	constructor(list) {
-		this.position = -1; // means that no selected items
-		this.length = Array.isArray(list) ? list.length : 0;
+		this.position = -1; // means that no items selected
 		this.storage = Array.isArray(list) ? list : [];
+		this.length = this.storage.length;
 	}
 	/* Edit operations */
 	// TODO: append array

@@ -9,7 +9,7 @@ test('Test classless singleton object', () => {
 	const { ClassLessSingletonLiteral } = Singleton;
 	const first = ClassLessSingletonLiteral.instance;
 	const second = ClassLessSingletonLiteral.instance;
-	second._instance.prop = 'test2';
+	second.prop = 'test2';
 	
 	iExpect(first, second);
 	expect(first.staticMethod()).toBe(42);
