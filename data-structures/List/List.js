@@ -154,6 +154,7 @@ class List {
 	}
 	
 	/* private helpers */
+	// TODO: test helpers and probably move them into libs
 	_checkIndex(index) {
 		return index > -1 && index < this.length;
 	}

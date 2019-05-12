@@ -8,8 +8,10 @@ This is repository contains some useful information of JavaScript parties such a
 
 ### Design Patterns
 - Singleton
+- Factory
 
 ### Algorithms
 
 ### Data Structures
 - List 
+- Stack
